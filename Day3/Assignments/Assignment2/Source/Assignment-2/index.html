@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body style="text-align: center;" >
+    <h1>Mumbai University Final Exam</h1>
+    <p>Remove your fear ,Exam is near, up your gear</p>
+    <p id = "Time" style="text-align: center; font-weight: bold; font-size:xx-large;"> </p>    
+    <p>All The best for your exam :)</p>
+   
+  <button type="submit" style="padding:6px; border-radius: 10px; font-size: 20px; background-color:red;" onclick="start()" id="Btn">Start Exam</button>
+
+  <script>
+      
+      var s = 61;
+      var h = 02;  
+      var m = 59;
+      function start(){
+        var timeout= setInterval(myFunction,1000);
+        document.getElementById("Btn").style.display="none" ;
+      }
+      function myFunction(){
+        s--;
+      if(s == 00){
+        m--;
+        s=60;
+      }
+      if(m == -1){
+        h--;
+        m=60;
+      }
+      if(h == -1){
+        alert("Time Is Over !!! \n Thanks For appearing in exams");
+        clearTimeout(timeout);
+      }
+      document.getElementById("Time").innerHTML= h + " hrs "+ m +" mins " + s + " secs ";
+      }
+       </script>
+  </body>
+</html>

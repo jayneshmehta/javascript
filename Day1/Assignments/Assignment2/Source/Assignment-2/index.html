@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+</head>
+
+<body>
+  <h1>Assignment-2</h1>
+  <form id="myForm">
+    <h3>Enter any date ?</h3>
+    <input type="text" name="date" id="date" placeholder="MM-DD-YYYY" required>
+    <input type="button" value="check" onclick="myfunction()">
+    <input type="reset" value="reset"><br><br>
+    <label for="result" id="result">Result:</label>
+
+
+  </form>
+  <script>
+    function myfunction() {
+      var date = document.getElementById('date').value;
+      array = date.split("-");
+
+      //length  
+      if (date.length != 10) {
+        document.getElementById('result').innerHTML = "Enter a proper Date..!!";
+      } else if (array[0] <= 0 || array[0] > 12) {
+        console.log('Not a valid month !!')
+        document.getElementById('result').innerHTML = "Not a valid month !!";
+      } else if (array[0] > 0 && array[0] < 12) {
+        if (array[0] != 02) {
+          if (array[0] % 2 == 0) {
+            //even
+            if (array[0] <= 06) {
+              if (array[1] > 30) {
+                document.getElementById('result').innerHTML = "Not a valid date !!";
+              } else {
+                document.getElementById('result').innerHTML = "Its a valid date !!";
+              }
+            } else {
+              if (array[1] <= 31) {
+                document.getElementById('result').innerHTML = "Its a valid date !!";
+              } else {
+                document.getElementById('result').innerHTML = "Not a valid date !!";
+              }
+            }
+          }
+          //odd
+          else {
+            if (array[0] <= 06) {
+              if (array[1] <= 31) {
+                document.getElementById('result').innerHTML = "Its a valid date !!";
+              } else {
+                document.getElementById('result').innerHTML = "Not a valid date !!";
+              }
+            } else {
+              if (array[1] > 30) {
+                document.getElementById('result').innerHTML = "Not a valid date !!";
+              } else {
+                document.getElementById('result').innerHTML = "It's a valid date !!";
+              }
+            }
+          }
+        }
+        //leap year 
+        if (array[0] == 02) {
+          if ((0 == array[2] % 4) || (0 == array[2] % 400)) {
+            if (array[1] > 29 && array[1] > 0) {
+              console.log('Not a valid date !! ')
+              document.getElementById('result').innerHTML = "Not a valid date !! ";
+            } else {
+              console.log('Its a valid date !! ')
+              document.getElementById('result').innerHTML = "Its a valid date !! ";
+            }
+          } else {
+            if (array[1] > 28 || array[1] < 0) {
+              console.log('Not a valid date !! ');
+              document.getElementById('result').innerHTML = "Not a valid date !! ";
+            } else {
+              console.log('Its a valid date !! ');
+              document.getElementById('result').innerHTML = "Its a valid date !! ";
+            }
+          }
+        }
+        //days
+      } else if (array[1] < 0 || array[1] > 31) {
+        console.log('Not a valid date !!')
+        document.getElementById('result').innerHTML = "Not a valid day !!..";
+        //year
+      } else if (array[2].length < 4) {
+        console.log('Not a valid year !!')
+        document.getElementById('result').innerHTML = "Not a valid year ..!!";
+      }
+      else {
+        document.getElementById('result').innerHTML = "Valid Date ..";
+      }
+    }
+  </script>k
+</body>
+
+</html>

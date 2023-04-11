@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="bg-white W-full shadow-lg sticky top-0 z-50">
+        <div class=" mx-10 px-2">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <a herf="" class="flex items-center py-4 px-2">
+                            <img src="https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                                alt="Logo" class="h-8 w-8 mr-2" />
+                            <span class="font-semibold text-gray-500 text-lg">Shoppie :)</span>
+                        </a>
+                    </div>
+                    <div class=" hidden md:flex items-center space-x-1">
+                        <a href="" class="py-4 px-2 text-purple-500  hover:text-pink-500 font-semibold">
+                            Home
+                        </a>
+                        <a herf=""
+                            class="py-4 px-2 text-purple-500 font-semibold hover:text-pink-500 transition duration-300">
+                            About
+                        </a>
+                        <a herf=""
+                            class="py-4 px-2 text-purple-500 font-semibold hover:text-pink-500 transition duration-300">
+                            Glasses
+                        </a>
+                        <a herf=""
+                            class="py-4 px-2 text-purple-500 font-semibold hover:text-pink-500 transition duration-300">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-3 ">
+                    <button href=""
+                        class="py-1 px-2 font-medium text-gray-500 rounded hover:bg-purple-500 hover:text-white transition duration-300"><img
+                            class="w-8" src="https://www.svgrepo.com/show/505594/cart-4.svg" alt="Cart" id="cart"
+                            onclick="show()"></button>
+                    <a href=""
+                        class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-purple-500 hover:text-white transition duration-300">Log
+                        In</a>
+                    <a href=""
+                        class="py-2 px-2 font-medium text-white bg-sky-500 rounded hover:bg-purple-400 transition duration-300">Sign
+                        Up</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <svg class=" w-6 h-6 text-gray-500 hover:text-purple-500 " x-show="!showMenu" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden mobile-menu">
+            <ul class="">
+                <li class="active"><a href="index.html"
+                        class="block text-sm px-2 py-4 text-white bg-sky-500 font-semibold">Link-1</a></li>
+                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-indigo-500 transition duration-300">Link-2</a>
+                </li>
+                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-purple-500 transition duration-300">Link-3</a>
+                </li>
+                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-pink-500 transition duration-300">Link-4</a>
+                </li>
+            </ul>
+        </div>
+        <script>
+            const btn = document.querySelector("button.mobile-menu-button");
+            const menu = document.querySelector(".mobile-menu");
+
+            btn.addEventListener("click", () => {
+                menu.classList.toggle("hidden");
+            });
+        </script>
+    </nav>
+
+    <div class="container-fluid
+  grid items-center grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 " id="cards">
+
+
+        <script type="module" src="main.js"></script>
+        <script>
+            var obj = [
+                { id: "ACT1", name: "Rayban1", price: "2999", photo: "https://images.pexels.com/photos/249210/pexels-photo-249210.jpeg?auto=compress&cs=tinysrgb&w=1600" },
+                { id: "ACT2", name: "Rayban2", price: "1599", photo: "https://images.pexels.com/photos/1548027/pexels-photo-1548027.jpeg?auto=compress&cs=tinysrgb&w=1600" },
+                { id: "ACT3", name: "Rayban3", price: "5999", photo: "https://images.pexels.com/photos/1669595/pexels-photo-1669595.jpeg?auto=compress&cs=tinysrgb&w=1600" },
+                { id: "ACT4", name: "Rayban4", price: "3499", photo: "https://images.pexels.com/photos/147641/pexels-photo-147641.jpeg?auto=compress&cs=tinysrgb&w=1600" },
+                { id: "ACT5", name: "Rayban5", price: "2499", photo: "https://images.pexels.com/photos/370472/pexels-photo-370472.jpeg?auto=compress&cs=tinysrgb&w=1600" },
+                { id: "ACT6", name: "Rayban6", price: "3499", photo: "https://images.pexels.com/photos/255305/pexels-photo-255305.jpeg?auto=compress&cs=tinysrgb&w=1600" },
+                { id: "ACT7", name: "Rayban7", price: "2499", photo: "https://images.pexels.com/photos/1532244/pexels-photo-1532244.jpeg?auto=compress&cs=tinysrgb&w=16000" },
+                { id: "ACT8", name: "Rayban8", price: "7999", photo: "https://images.pexels.com/photos/343720/pexels-photo-343720.jpeg?auto=compress&cs=tinysrgb&w=1600" }
+            ]
+
+            add(obj)
+            function add(data) {
+
+                for (const i in data) {
+                    document.querySelector("#cards").innerHTML += `
+                    <div class="rounded my-4 mx-4 overflow-hidden shadow-lg "  >
+                    <img class="w-full" src="${data[i].photo}" alt="">
+                    <div class="px-6 py-4">
+                    <div class="font-bold text-xl">${data[i].name}</div>
+                    <p class="font-bold text-blue-500 " id="price">${data[i].price}/-</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, eum laborum? Maxime voluptate dolore, obcaecati mollitia veritatis ipsam facere! Molestias sed quisquam 
+                    </p>
+                    <button class="buttons bg-orange-400 p-3 rounded-lg mt-3 text-white hover:bg-gray-700 " id="${data[i].id}">Add To Cart</button>
+                    </div>
+                    </div>`
+                }
+            }
+            var shoppingCartArr = []
+            var buttons = document.getElementsByClassName("buttons")
+            console.log( buttons);
+            for (const i in buttons) {
+                buttons[i].addEventListener("click", function () {
+                    shoppingCartArr.push(obj[i])
+                    localStorage.setItem("data", JSON.stringify(shoppingCartArr));
+                });
+            }
+            function show() {
+                let output = localStorage.getItem("data");
+                output = JSON.parse(output);
+                console.log(output);
+            }
+
+        </script>
+</body>
+
+</html>

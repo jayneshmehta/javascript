@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <h3>Practical-7</h3>
+  <h3>CallBack Function</h3>
+  <p id="Answer"></p>
+  <body>
+     <script>
+      num=prompt("Enter your number");
+      function result(num,fun){
+          fun(num*num);
+      }
+      function callback(a){
+        document.getElementById("Answer").innerHTML="Answer :- " + a;
+      }
+      result(num,callback);
+     </script>
+  </body>
+</html>

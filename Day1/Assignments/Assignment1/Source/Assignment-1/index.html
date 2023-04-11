@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment-1</title>
+  </head>
+  <body>
+    <h1>Assignment-1</h1>
+    <p>Create an application for performing basic math operations like Addition, Subtraction, Multiplication and Division.</p><br>
+    <form id="myform">
+
+    <label for="numb1" id="numb1">Please enter first number :  </label>
+    <input type="number" name="" id="num1"><br><br>
+    <label for="numb2" id="numb2">Please enter second number :  </label>
+    <input type="number" name="" id="num2"><br><br>
+    <label >Please select operation you want to perform :  </label><br>
+        <input type="radio" name="operation" id="add" value="add">
+        <label>Addition</label><br>
+
+        <input type="radio" name="operation" id="sub" value="sub">
+        <label>Subtraction</label><br>
+
+        <input type="radio" name="operation" id="div" value="div">
+        <label>Division</label><br>
+
+        <input type="radio" name="operation" id="multi" value="multi">
+        <label>Multiplication</label><br><br>
+    
+        <input type="button" onclick="myfunction()" id="submit" value="Result">
+        <input type="reset" value="reset"><br><br>
+        <label for="result" >Result:- </label>
+        <input type="text" name="ShowResult" id="ShowResult" value=""> 
+      </form>
+    
+      </body>
+  <script>
+
+      document.getElementById('submit').onclick = function() {
+          var radios = document.getElementsByName("operation");
+          var selected = Array.from(radios).find(radio => radio.checked).value;
+          
+          let n1 = parseInt(document.getElementById('num1').value);
+          let n2 = parseInt(document.getElementById('num2').value);
+            console.log();
+          switch (selected) { 
+        case 'add':
+          document.getElementById('ShowResult').value = n1+n2;
+          break;
+        case 'sub':
+          document.getElementById('ShowResult').value = n1-n2;
+          break;
+        case 'div':
+          document.getElementById('ShowResult').value = n1/n2;
+          break;
+        case 'multi':
+          document.getElementById('ShowResult').value = n1*n2;
+          break;
+        default:
+        document.getElementById('ShowResult').value = "No value found";
+       }
+      } 
+
+  </script>
+</html>

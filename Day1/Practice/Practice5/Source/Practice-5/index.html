@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-5</title>
+</head>
+<body>
+    <h1>Practical-5</h1>
+    <p>Write a JavaScript function to extract a specified number of characters from a string</p>
+    <button onclick="myfunction(str)">Show</button>
+    <strong><p id="Demo">Ans</p></strong>
+      
+</body>
+<script>
+    var str = "Aeroplane"; 
+    function myfunction(str){
+        var num = prompt("Enter the number you wnat to Extrect from the string: Aeroplane  " );
+        document.getElementById("Demo").innerHTML= str.slice(0,parseInt(num));   
+    }
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <h1>Practice-8</h1> 
+    <h3>Var :</h3>
+<p id="demo">In var we can define variables again and again </p>
+<p id="var1"></p>
+<p id="var2"></p>
+<p id="demo2">In Let we can not define variables again and again </p>
+<p id="let1"></p>
+<p id="let2"></p>
+
+  </body>
+  <script>
+    var x=10;
+    document.getElementById("var1").innerHTML="Var x = " +x;
+    document.getElementById("var1").innerHTML="Var x = " +x;
+    
+    var x=20;    
+    document.getElementById("var2").innerHTML="Var x = " +x;
+
+    let y=10;
+    document.getElementById("let1").innerHTML="let y = " +y;
+    let z=20;    
+    document.getElementById("let2").innerHTML="let y = Error" ;
+
+  </script>
+</html>

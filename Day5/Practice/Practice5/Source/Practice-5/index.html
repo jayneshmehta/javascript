@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <h1>Practice-5</h1>
+    <p id="demo"></p>
+    <script>
+const Employee = {
+  Details: function() {
+    return this.Name + "<br>" + this.Address + "<br>" + this.Designation;
+  }
+}
+const Employee1 = {
+  Name:"jaynesh",
+  Address:"Ahemdabad",
+  Designation:"Traniee"
+}
+const Employee2 = {
+  Name:"Rakesh",
+  Address:"Rajkot",
+  Designation:"Traniee"
+}
+document.getElementById("demo").innerHTML = "Employee's Detail's <br><br>" + Employee.Details.apply(Employee1);
+    </script>
+  </body>
+</html>

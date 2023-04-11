@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extra Assingmnet-1</title>
+</head>
+
+<body>
+    <form id="myForm" style="border: 2px solid black ; width: fit-content; padding: 20px;">
+        <label for="fname">First Name : </label>
+        <input type="text" name="fname" id="fname" placeholder="F-name" required><br><br>
+        <label for="lname">Last Name :</label>
+        <input type="text" name="lname" id="lname" placeholder="L-name" required><br><br>
+        <label for="email">Email :</label>
+        <input type="email" name="email" id="Email" placeholder="F-name" required><br><br>
+        <label for="gender" >Gender :</label>
+        <input type="radio" name="gender" id="GenM">
+        <label>Male</label>
+
+        <input type="radio" name="gender" id="GenF">
+        <label>Female</label>
+
+        <input type="radio" name="gender" id="GenO">
+        <label>Others</label><br><br>
+
+
+        <label for="states">State :</label>
+        <select name="state" id="state" onchange="myfunction()" required>
+            <option value="select">select</option>
+            <option value="maharastra" id="MH">Maharastra </option>
+            <option value="Gujarat" id="GJ">Gujarat</option>
+        </select><br><br>
+        <label for="citys">City :</label>
+        <select name="city" required id="city" style="width: 100px;">
+        </select><br><br>
+        <label for="skills">Skills: </label><br>
+        <input type="checkbox" id="skills1" name="skills1" value="FrontEnd">
+        <label for="skills1">Frond-End</label><br>
+        <input type="checkbox" id="skills2" name="skills2" value="BackEnd">
+        <label for="skills2">Back-End</label><br>
+        <input type="checkbox" id="skills3" name="skills3" value="Fullstack">
+        <label for="skills3">Full-Stack</label><br><br>
+
+        <button type="submit" style="text-align: center;" onclick="validateForm()">Submit</button>
+    </form>
+</body>
+<script>
+
+
+    function myfunction() {
+        var x = document.getElementById("state");
+        var s = x.selectedIndex;
+        console.log(s)
+        document.getElementById("city").innerHTML = "";
+        states = {
+            maharastra: ["mumbai", "Pune", "kolapur", "solapur", "karjat", "lonavala"],
+
+            Gujarat: ["Rajkot", "Ahemdabad", "surat", "vadodara", "vapi", "anand"]
+        }
+        if (s == 1) {
+            for (let x in states.maharastra) {
+                var c = document.getElementById("city");
+                var o = document.createElement("option");
+                o.text = states.maharastra[x];
+                c.options.add(o);
+            }
+        }
+        else if (s == 2) {
+            for (let x in states.Gujarat) {
+                var c = document.getElementById("city");
+                var o = document.createElement("option");
+                o.text = states.Gujarat[x];
+                c.options.add(o);
+            }
+        }
+    }
+    function validateForm() {
+        if (document.forms["myForm"]["fname"].value == "" || document.forms["myForm"]["lname"].value == "" || document.forms["myForm"]["email"].value == "" || document.forms["myForm"]["state"].value == "" || document.forms["myForm"]["city"].value == "") {
+            alert("All fields must be filled out !!");
+            return false;
+        } else {
+            var d = new Date;
+            alert("Thanks for your time!! \n \n" + d);
+        }
+    }
+
+
+</script>
+
+</html>

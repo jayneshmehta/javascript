@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <h1>Practice-7</h1>
+    <p>Try some operation with list like push, pop, shifting, deleting element</p>
+    <hr>
+    
+    <p style=" font-size: 30px;" id="demo"></p>
+    <button type="submit" onclick="push(array)">Push</button>
+    <p id="Push"></p>
+    <br><br>
+    <button type="submit" onclick="pop(array)">Pop</button>
+    <p id="Pop"></p><br><br>
+    <button type="submit" onclick="shift(array)">Shift</button>
+    <p id="Shift"></p><br><br>
+    <script>
+      array=[" java "," Python "," C++ "," c# "," .NEt "," JavaScript "];
+      document.getElementById("demo").innerHTML ="Array : " + array
+
+      function push(array){
+        array.push("HTML");
+        document.getElementById("Push").innerHTML ="Array : " + array 
+      }
+      function pop(array){
+        array.pop("HTML");
+        document.getElementById("Pop").innerHTML ="Array : " + array 
+      }
+      function shift(array){
+        array.shift();
+        document.getElementById("Shift").innerHTML ="Array : " + array 
+      }    
+    </script>
+  </body>
+</html>

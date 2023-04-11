@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-4</title>
+</head>
+<body>
+     <h1>Practical-4</h1>
+     <p>  Write a JavaScript function to split a string and convert it into an array of words </p>
+     <button onclick="Myfunction()">Show</button>
+    <strong><p id="demo">Ans</p></strong>
+    </body>
+
+    <script>
+        function Myfunction(){
+           var str = prompt("Enter any string : ");
+           array = str.split(" ");
+            document.getElementById("demo").innerHTML = "Ans: \n" + array;     
+        }    
+    </script>
+</html>

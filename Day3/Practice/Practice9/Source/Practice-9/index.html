@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <h1>Practice-8</h1>
+    <h3>Promise Function</h3>
+    
+    <p id="Ans1"></p>
+    <p id="Ans"></p>
+    </body>
+  <script>
+    const myTimeout = setTimeout(MyFunction, 500);
+    function MyFunction(){
+      var x = prompt("Enter your String ? ");
+      var y = Number(x);
+      var answ;
+      let myPromise = new Promise(function(MyResolve , MyReject){
+        if(isNaN(y)){
+      
+          array1 = x.split("");
+          array2 =[];
+          for(var i = array1.length-1;i>=0;i--){
+            array2.push(array1[i]);
+            answ = array2.join("");
+          }
+           MyResolve(answ);
+        }else{     
+          MyReject(x + " Wrong Input ");
+        }
+      });
+      function display(ans){
+      document.getElementById("Ans").innerHTML= ans;
+      }
+      myPromise.then(
+        function(value) {display(value);},
+        function(error) {display(error);}
+      );   
+    }
+ </script>
+</html>
